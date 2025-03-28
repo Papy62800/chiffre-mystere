@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+section {
+  margin-left: auto;
+  margin-right: auto;
+  background-image: url(./photo.jpg);
+  width: 1200px;
+  border-radius: 15px;
+}
+
+h1 {
+  text-align: center;
+  padding: 10px;
+}
+#niveau {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
+}
+
+.btnNiveau {
+  background: linear-gradient(
+    35deg,
+    rgb(255, 0, 0) 0%,
+    rgb(5, 252, 170) 25%,
+    rgb(14, 35, 219) 50%,
+    rgb(128, 0, 79) 75%,
+    rgb(255, 0, 0) 100%
+  );
+  border: none;
+  cursor: pointer;
+  border: solid 1px;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+#boite {
+  display: flex;
+  margin: 100px 60px;
+  border: solid 1px;
+  border-radius: 10px;
+  /* height: 150px; */
+  background: linear-gradient(
+    35deg,
+    rgb(255, 0, 0) 0%,
+    rgb(5, 252, 170) 25%,
+    rgb(14, 35, 219) 50%,
+    rgb(128, 0, 79) 75%,
+    rgb(255, 0, 0) 100%
+  );
+  justify-content: right;
+  justify-content: space-around;
+  padding: 10px;
+}
+#explication {
+  display: flex;
+  flex-direction: column;
+  border: solid 1px;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+  padding: 20px;
+}
+.box {
+  border-radius: 15px;
+  border: solid 1px;
+}
+.trait {
+  height: 2px;
+  width: 100%;
+  background-color: blue;
+  margin: 50px 0;
+}
+
+#ColonneG {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+#input {
+  width: 50px;
+  height: 20px;
+  text-align: center;
+}
+.valider {
+  cursor: grab;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MINI JEU</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section id="container">
+      <h1>chiffre mystère</h1>
+
+      <div id="niveau">
+        <div><button class="btnNiveau" id="nivFacile">facile</button></div>
+        <div><button class="btnNiveau" id="nivMoyen" >moyen</button></div>
+        <div><button class="btnNiveau" id="nivDifficile">difficile</button></div>
+      </div>
+
+      <div id="boite">
+        <div id="ColonneG">
+          <h2>entrer un chiffre</h2>
+          <input id="input" type="text" placeholder="chiffre" />
+          <button class="valider" id="valider">valider</button>
+        </div>
+        <div id="explication" class="box">
+          <h3>trouver le chiffre mystere</h3>
+          <p>(entre 1 et 10)</p>
+          <p>vous avez 3 chances</p>
+          <div class="trait"></div>
+          <div class="1C">Chance 1:</div>
+          <div class="1R">
+           <p> Vous avez choisi:<p>
+            <p id="Reponse"></p>
+            <p id="gagner"></p>
+          </div>
+          <div class="trait"></div>
+        </div>
+        
+      </div>
+    </section>
+    <script src="script.js"></script>
+  </body>
+</html>
