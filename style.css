@@ -38,6 +38,8 @@ h1 {
   padding: 10px;
 }
 
+.faux { background: red;}
+
 #boite {
   display: flex;
   margin: 100px 60px;
@@ -85,10 +87,13 @@ h1 {
 }
 
 #input {
-  width: 50px;
-  height: 20px;
+  width: 70px;
+  height: 30px;
   text-align: center;
+  margin-bottom: 5px;
 }
 .valider {
+  width: 50px;
+  height: 25px;
   cursor: grab;
 }
