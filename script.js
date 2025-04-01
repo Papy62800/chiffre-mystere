@@ -53,9 +53,7 @@ function compareNb(nbInput, alea) {
     gagner.textContent = ` Gagner!!! Vous avez trouvé le chiffre en ${NbEssai} tentatives.`;
     // gagner.textContent = "gagné";
     console.log("gagné");
-    setTimeout(function () {
-      gagner.textContent = "";
-    }, 5000);
+    
   }
 }
 
