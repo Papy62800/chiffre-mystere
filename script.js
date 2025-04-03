@@ -4,17 +4,16 @@ const niveauDifficile = document.getElementById("nivDifficile");
 const Valider = document.getElementById("valider");
 const reponse = document.getElementById("Reponse");
 const input = document.getElementById("input");
-const gagner = document.getElementById("gagner");
+const Resultat = document.getElementById("Resultat");
 const boite = document.getElementById("boite");
+const Essai = document.getElementById("Essai");
+
 
 let valeurChiffre;
-let NbEssai = 0;
+let NbEssai = 1;
+let Valeur = 3;
 
 
-/* genere un chiffre aleatoire*/
-let min = 1;
-let max = 10;
-// let alea =  Math.round(Math.random()* (max - min ) + min);
 
 /*ecoute btn niveau*/
 
@@ -28,47 +27,68 @@ niveauDifficile.addEventListener("click", function () {
   alert("btn difficile");
 });
 
-function chiffreAletoire() {
-  alea = Math.round(Math.random() * (10 - 1) + 1);
+function chiffreAletoire(mini , max) {
+  alea = Math.round(Math.random() * (max - mini) + mini);
   console.log(alea);
   return alea;
 }
 
-/*ecoute du chiffre et mise en memoire */
 
-function compareNb(nbInput, alea) {
-  if (nbInput > alea) {
-    gagner.textContent = "c'est moins";
-    console.log("perdu");
-    setTimeout(function () {
-      gagner.textContent = "";
-    }, 1000);
-  } else if (nbInput < alea) {
-    gagner.textContent = "c'est plus";
-    console.log("perdu");
-    setTimeout(function () {
-      gagner.textContent = "";
-    }, 1000);
-  } else {
-    gagner.textContent = ` Gagner!!! Vous avez trouvé le chiffre en ${NbEssai} tentatives.`;
-    // gagner.textContent = "gagné";
-    console.log("gagné");
-    
+
+function Limite() {
+  
+  if (Valeur <= NbEssai) {
+    Essai.textContent = `fin de partie`;
   }
+  else{ Essai.textContent = "continuer"}
+  
 }
 
-chiffreAletoire();
+
+function compareNb(nbInput, alea) {
+ 
+  if (nbInput > alea)  {
+    Resultat.textContent = "c'est moins";
+    console.log("perdu");
+    setTimeout(function () {
+      Resultat.textContent = "";
+    }, );
+  } else if (nbInput < alea ) {
+    Resultat.textContent = "c'est plus";
+    console.log("perdu");
+    setTimeout(function () {
+      Resultat.textContent = "";
+    }, );
+  }
+  else   {
+    Resultat.textContent = `Gagner!!! Vous avez trouvé le chiffre en ${NbEssai} tentatives.`;
+    console.log("gagné");
+    
+   }
+  }
+
+
+
+chiffreAletoire( 1 ,10);
+   
 
 input.addEventListener("input", function (e) {
   valeurChiffre = e.target.value;
 });
 
+
+
 Valider.addEventListener("click", function () {
-  console.log(valeurChiffre);
-  console.log(alea);
-  NbEssai++;
-  console.log(NbEssai);
+ 
   compareNb(valeurChiffre, alea);
+  Limite(Valeur);
+  console.log(alea);
+   
+ console.log("valeur: "+ Valeur);
+
+ 
+  console.log("Nombre d'essai " + NbEssai);
+  NbEssai++;
   reponse.style.color = "white";
   reponse.textContent = valeurChiffre;
 });
