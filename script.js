@@ -35,18 +35,20 @@ function chiffreAletoire(mini , max) {
 
 
 
-function Limite() {
+// function Limite() {
   
-  if (Valeur <= NbEssai) {
-    Essai.textContent = `fin de partie`;
-  }
-  else{ Essai.textContent = "continuer"}
+//   if (Valeur <= NbEssai) {
+//     Essai.textContent = `fin de partie`;
+//   }
+//   else{ Essai.textContent = "continuer"}
   
-}
+// }
 
 
-function compareNb(nbInput, alea) {
+function compareNb(nbInput, alea, Valeur) {
  
+  if (Valeur > NbEssai) {
+
   if (nbInput > alea)  {
     Resultat.textContent = "c'est moins";
     console.log("perdu");
@@ -66,7 +68,8 @@ function compareNb(nbInput, alea) {
     
    }
   }
-
+  else{Essai.textContent = `fin de partie`}
+}
 
 
 chiffreAletoire( 1 ,10);
@@ -80,8 +83,8 @@ input.addEventListener("input", function (e) {
 
 Valider.addEventListener("click", function () {
  
-  compareNb(valeurChiffre, alea);
-  Limite(Valeur);
+  compareNb(valeurChiffre, alea, Valeur);
+  //Limite(Valeur);
   console.log(alea);
    
  console.log("valeur: "+ Valeur);
