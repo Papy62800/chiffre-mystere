@@ -52,13 +52,13 @@ function compareNb(nbInput, alea) {
     console.log("perdu");
     setTimeout(function () {
       Resultat.textContent = "";
-    }, );
+    }, 3000);
   } else if (nbInput < alea ) {
     Resultat.textContent = "c'est plus";
     console.log("perdu");
     setTimeout(function () {
       Resultat.textContent = "";
-    }, );
+    }, 3000);
   }
   else   {
     Resultat.textContent = `Gagner!!! Vous avez trouvé le chiffre en ${NbEssai} tentatives.`;
