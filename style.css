@@ -7,7 +7,7 @@
 section {
   margin-left: auto;
   margin-right: auto;
-  background-image: url(./photo.jpg);
+  //background-image: url(./photo.jpg);
   width: 1200px;
   border-radius: 15px;
 }
@@ -23,18 +23,22 @@ h1 {
 }
 
 .btnNiveau {
+  font-size:20px;
+  width: 100px;
+  height: 70px;
   background: linear-gradient(
     35deg,
-    rgb(255, 0, 0) 0%,
-    rgb(5, 252, 170) 25%,
-    rgb(14, 35, 219) 50%,
-    rgb(128, 0, 79) 75%,
-    rgb(255, 0, 0) 100%
+    rgb(255, 0, 0, 0.7) 0%,
+    rgba(5, 252, 170, 0.7) 25%,
+    rgb(14, 35, 219, 0.7) 50%,
+    rgb(128, 0, 79, 0.7) 75%,
+    rgb(255, 0, 0, 0.7) 100%
+    
   );
   border: none;
   cursor: pointer;
   border: solid 1px;
-  border-radius: 15px;
+  border-radius: 25px;
   padding: 10px;
 }
 

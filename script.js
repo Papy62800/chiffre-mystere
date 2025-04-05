@@ -17,11 +17,12 @@ let Valeur = 3;
 
 /*ecoute btn niveau*/
 
-niveauFacile.addEventListener("click", function () {
-  alert("btn facile");
-});
+// niveauFacile.addEventListener("click", function () {
+//   alert("btn facile");
+// });
 niveauMoyen.addEventListener("click", function () {
   alert("btn moyen");
+
 });
 niveauDifficile.addEventListener("click", function () {
   alert("btn difficile");
@@ -35,29 +36,19 @@ function chiffreAletoire(mini , max) {
 
 
 
-// function Limite() {
-  
-//   if (Valeur <= NbEssai) {
-//     Essai.textContent = `fin de partie`;
-//   }
-//   else{ Essai.textContent = "continuer"}
-  
-// }
 
+  function compareNb(nbInput, alea, Valeur) {
+ if (nbInput != "") {
 
-function compareNb(nbInput, alea, Valeur) {
- 
   if (Valeur > NbEssai) {
 
   if (nbInput > alea)  {
     Resultat.textContent = "c'est moins";
-    console.log("perdu");
     setTimeout(function () {
       Resultat.textContent = "";
     }, 3000);
   } else if (nbInput < alea ) {
     Resultat.textContent = "c'est plus";
-    console.log("perdu");
     setTimeout(function () {
       Resultat.textContent = "";
     }, 3000);
@@ -68,7 +59,16 @@ function compareNb(nbInput, alea, Valeur) {
     
    }
   }
-  else{Essai.textContent = `fin de partie`}
+  else{
+    Essai.textContent = `fin de la partie le chiffre était: ${alea}`;
+
+  }
+}
+
+else{
+  console.log("rentre un chiffre");
+  NbEssai --;
+}
 }
 
 
