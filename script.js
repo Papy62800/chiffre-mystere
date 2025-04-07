@@ -7,36 +7,67 @@ const input = document.getElementById("input");
 const Resultat = document.getElementById("Resultat");
 const boite = document.getElementById("boite");
 const Essai = document.getElementById("Essai");
-
+const nombreNiveau = document.getElementById("nombreNiveau");
+const chance = document.getElementById("chance");
 
 let valeurChiffre;
 let NbEssai = 1;
-let Valeur = 3;
+let Valeur = 0;
+let min = 0 ;
+let max = 0;
+
+/***************************************************************************** */
 
 
+niveauFacile.addEventListener("click", function () {
+  Resultat.textContent ="";
+  Essai.textContent = "";
+  alert("niveau facile 3 chances chiffre entre 1 et 10");
+nombreNiveau.textContent= (" entre 1 et  10");
+chance.textContent= (" vous avez 3 chances");
+ NbEssai = 1;
+ Valeur = 3;
+ min = 0;
+ max = 10;
+chiffreAletoire( min , max);
+});
 
-/*ecoute btn niveau*/
-
-// niveauFacile.addEventListener("click", function () {
-//   alert("btn facile");
-// });
 niveauMoyen.addEventListener("click", function () {
-  alert("btn moyen");
-
+  Resultat.textContent ="";
+  Essai.textContent = "";
+  alert("niveau facile 7 chances chiffre entre 1 et 50");
+  nombreNiveau.textContent= (" entre 1 et  50");
+  chance.textContent= (" vous avez 7 chances");
+ NbEssai = 1;
+ Valeur = 7;
+ min = 10;
+ max = 50;
+chiffreAletoire( min , max);
 });
+
 niveauDifficile.addEventListener("click", function () {
-  alert("btn difficile");
+   Resultat.textContent ="";
+  Essai.textContent = "";
+  alert("niveau facile 10 chances chiffre entre 1 et 100");
+  nombreNiveau.textContent= (" entre 1 et 100");
+  chance.textContent= (" vous avez 10 chances");
+ NbEssai = 1;
+ Valeur = 10;
+ min = 50;
+ max = 100;
+chiffreAletoire( min , max);
 });
 
+
+
+/************************************************************************** */
 function chiffreAletoire(mini , max) {
   alea = Math.round(Math.random() * (max - mini) + mini);
   console.log(alea);
   return alea;
 }
 
-
-
-
+/**************************************************************************** */
   function compareNb(nbInput, alea, Valeur) {
  if (nbInput != "") {
 
@@ -72,7 +103,7 @@ else{
 }
 
 
-chiffreAletoire( 1 ,10);
+/**************************************************************************** */
    
 
 input.addEventListener("input", function (e) {
@@ -80,7 +111,7 @@ input.addEventListener("input", function (e) {
 });
 
 
-
+/****************************************************************************** */
 Valider.addEventListener("click", function () {
  
   compareNb(valeurChiffre, alea, Valeur);
