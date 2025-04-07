@@ -25,7 +25,7 @@ niveauFacile.addEventListener("click", function () {
   alert("niveau facile 3 chances chiffre entre 1 et 10");
 nombreNiveau.textContent= (" entre 1 et  10");
 chance.textContent= (" vous avez 3 chances");
- NbEssai = 1;
+ NbEssai = 0;
  Valeur = 3;
  min = 0;
  max = 10;
@@ -38,9 +38,9 @@ niveauMoyen.addEventListener("click", function () {
   alert("niveau facile 7 chances chiffre entre 1 et 50");
   nombreNiveau.textContent= (" entre 1 et  50");
   chance.textContent= (" vous avez 7 chances");
- NbEssai = 1;
+ NbEssai = 0;
  Valeur = 7;
- min = 10;
+ min = 0;
  max = 50;
 chiffreAletoire( min , max);
 });
@@ -51,9 +51,9 @@ niveauDifficile.addEventListener("click", function () {
   alert("niveau facile 10 chances chiffre entre 1 et 100");
   nombreNiveau.textContent= (" entre 1 et 100");
   chance.textContent= (" vous avez 10 chances");
- NbEssai = 1;
+ NbEssai = 0;
  Valeur = 10;
- min = 50;
+ min = 0;
  max = 100;
 chiffreAletoire( min , max);
 });
@@ -85,7 +85,7 @@ function chiffreAletoire(mini , max) {
     }, 3000);
   }
   else   {
-    Resultat.textContent = `Gagner!!! Vous avez trouvé le chiffre en ${NbEssai} tentatives.`;
+    Resultat.textContent = `Gagner!!! Vous avez trouvé le chiffre en ${NbEssai+1} tentatives.`;
     console.log("gagné");
     
    }
@@ -115,14 +115,14 @@ input.addEventListener("input", function (e) {
 Valider.addEventListener("click", function () {
  
   compareNb(valeurChiffre, alea, Valeur);
-  //Limite(Valeur);
+  
   console.log(alea);
-   
+    NbEssai++;
  console.log("valeur: "+ Valeur);
 
- 
+  
   console.log("Nombre d'essai " + NbEssai);
-  NbEssai++;
+
   reponse.style.color = "white";
   reponse.textContent = valeurChiffre;
 });
