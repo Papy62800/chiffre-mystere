@@ -21,6 +21,8 @@ let max = 0;
 
 niveauFacile.addEventListener("click", function () {
   niveauFacile.style.color ="white";
+  niveauMoyen.style.color ="black";
+  niveauDifficile.style.color ="black";
   Valider.style.display = "block";
   Resultat.textContent ="";
   Essai.textContent = "";
@@ -35,7 +37,9 @@ chiffreAletoire( min , max);
 });
 
 niveauMoyen.addEventListener("click", function () {
-  niveauFacile.style.color ="white";
+  niveauMoyen.style.color ="white";
+  niveauFacile.style.color ="black";
+  niveauDifficile.style.color ="black";
   Valider.style.display = "block";
   Resultat.textContent ="";
   Essai.textContent = "";
@@ -50,7 +54,9 @@ chiffreAletoire( min , max);
 });
 
 niveauDifficile.addEventListener("click", function () {
-  niveauFacile.style.color ="white";
+  niveauDifficile.style.color ="white";
+  niveauFacile.style.color ="black";
+  niveauMoyen.style.color ="black";
   Valider.style.display = "block";
    Resultat.textContent ="";
   Essai.textContent = "";
