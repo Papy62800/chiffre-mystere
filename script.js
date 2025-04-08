@@ -77,17 +77,20 @@ function chiffreAletoire(mini , max) {
   // if (Valeur > NbEssai) {
 
   if (nbInput > alea && Valeur > NbEssai)  {
+    Resultat.style.color = "rgb(0,255,26)";
     Resultat.textContent = "c'est moins";
     setTimeout(function () {
       Resultat.textContent = "";
     }, 3000);
   } else if (nbInput < alea && Valeur > NbEssai ) {
+    Resultat.style.color = "rgb(0,255,26)";
     Resultat.textContent = "c'est plus";
     setTimeout(function () {
       Resultat.textContent = "";
     }, 3000);
   }
   else if ( nbInput == alea && Valeur +1 > NbEssai)   {
+    Resultat.style.color = "rgb(0,255,26)";
     Valider.style.display = "none";
     Resultat.textContent = `Gagner!!! Vous avez trouvé le chiffre en ${NbEssai } tentatives.`;
     console.log("gagné");
@@ -95,6 +98,7 @@ function chiffreAletoire(mini , max) {
    }
   // }
   else{
+    Resultat.style.color = "rgb(0,255,26)";
     Essai.textContent = `fin de la partie le chiffre était: ${alea}`;
     Valider.style.display = "none";
 
