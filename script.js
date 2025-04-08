@@ -20,6 +20,7 @@ let max = 0;
 
 
 niveauFacile.addEventListener("click", function () {
+  niveauFacile.style.color ="white"
   Valider.style.display = "block";
   Resultat.textContent ="";
   Essai.textContent = "";
@@ -34,6 +35,7 @@ chiffreAletoire( min , max);
 });
 
 niveauMoyen.addEventListener("click", function () {
+  niveauFacile.style.color ="white"
   Valider.style.display = "block";
   Resultat.textContent ="";
   Essai.textContent = "";
@@ -48,6 +50,7 @@ chiffreAletoire( min , max);
 });
 
 niveauDifficile.addEventListener("click", function () {
+  niveauFacile.style.color ="white"
   Valider.style.display = "block";
    Resultat.textContent ="";
   Essai.textContent = "";
