@@ -11,7 +11,7 @@ const nombreNiveau = document.getElementById("nombreNiveau");
 const chance = document.getElementById("chance");
 
 let valeurChiffre;
-let NbEssai = 1;
+let NbEssai = 0;
 let Valeur = 0;
 let min = 0 ;
 let max = 0;
@@ -20,6 +20,7 @@ let max = 0;
 
 
 niveauFacile.addEventListener("click", function () {
+  Valider.style.display = "block";
   Resultat.textContent ="";
   Essai.textContent = "";
   alert("niveau facile 3 chances chiffre entre 1 et 10");
@@ -33,6 +34,7 @@ chiffreAletoire( min , max);
 });
 
 niveauMoyen.addEventListener("click", function () {
+  Valider.style.display = "block";
   Resultat.textContent ="";
   Essai.textContent = "";
   alert("niveau facile 7 chances chiffre entre 1 et 50");
@@ -46,6 +48,7 @@ chiffreAletoire( min , max);
 });
 
 niveauDifficile.addEventListener("click", function () {
+  Valider.style.display = "block";
    Resultat.textContent ="";
   Essai.textContent = "";
   alert("niveau facile 10 chances chiffre entre 1 et 100");
@@ -71,27 +74,29 @@ function chiffreAletoire(mini , max) {
   function compareNb(nbInput, alea, Valeur) {
  if (nbInput != "") {
 
-  if (Valeur > NbEssai) {
+  // if (Valeur > NbEssai) {
 
-  if (nbInput > alea)  {
+  if (nbInput > alea && Valeur > NbEssai)  {
     Resultat.textContent = "c'est moins";
     setTimeout(function () {
       Resultat.textContent = "";
     }, 3000);
-  } else if (nbInput < alea ) {
+  } else if (nbInput < alea && Valeur > NbEssai ) {
     Resultat.textContent = "c'est plus";
     setTimeout(function () {
       Resultat.textContent = "";
     }, 3000);
   }
-  else   {
-    Resultat.textContent = `Gagner!!! Vous avez trouvé le chiffre en ${NbEssai+1} tentatives.`;
+  else if ( nbInput == alea && Valeur +1 > NbEssai)   {
+    Valider.style.display = "none";
+    Resultat.textContent = `Gagner!!! Vous avez trouvé le chiffre en ${NbEssai } tentatives.`;
     console.log("gagné");
     
    }
-  }
+  // }
   else{
     Essai.textContent = `fin de la partie le chiffre était: ${alea}`;
+    Valider.style.display = "none";
 
   }
 }
@@ -113,11 +118,11 @@ input.addEventListener("input", function (e) {
 
 /****************************************************************************** */
 Valider.addEventListener("click", function () {
- 
+ NbEssai++;
   compareNb(valeurChiffre, alea, Valeur);
   
   console.log(alea);
-    NbEssai++;
+    
  console.log("valeur: "+ Valeur);
 
   
