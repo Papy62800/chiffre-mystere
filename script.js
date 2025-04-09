@@ -9,6 +9,7 @@ const boite = document.getElementById("boite");
 const Essai = document.getElementById("Essai");
 const nombreNiveau = document.getElementById("nombreNiveau");
 const chance = document.getElementById("chance");
+const info= document.getElementById("info");
 
 let valeurChiffre;
 let NbEssai = 0;
@@ -20,6 +21,7 @@ let max = 0;
 
 
 niveauFacile.addEventListener("click", function () {
+  info.style.display = "none";
   niveauFacile.style.color ="white";
   niveauMoyen.style.color ="black";
   niveauDifficile.style.color ="black";
@@ -37,6 +39,7 @@ chiffreAletoire( min , max);
 });
 
 niveauMoyen.addEventListener("click", function () {
+  info.style.display = "none";
   niveauMoyen.style.color ="white";
   niveauFacile.style.color ="black";
   niveauDifficile.style.color ="black";
@@ -54,6 +57,7 @@ chiffreAletoire( min , max);
 });
 
 niveauDifficile.addEventListener("click", function () {
+  info.style.display = "none";
   niveauDifficile.style.color ="white";
   niveauFacile.style.color ="black";
   niveauMoyen.style.color ="black";

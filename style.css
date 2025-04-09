@@ -101,6 +101,23 @@ h1 {
   padding: 20px;
 }
 
+#info {
+  display: flex;
+  background-color:green ;
+  border: solid 1px ;
+  position: absolute;
+  height: 70%;
+  width: 150%;
+  
+}
+
+#info p{
+  color: red;
+  text-align: center;
+  margin: auto auto;
+  font-size: 40px;
+}
+
 #input {
   width: 70px;
   height: 30px;
