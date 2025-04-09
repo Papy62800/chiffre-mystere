@@ -10,6 +10,7 @@ const Essai = document.getElementById("Essai");
 const nombreNiveau = document.getElementById("nombreNiveau");
 const chance = document.getElementById("chance");
 const info= document.getElementById("info");
+const Rejouer = document.getElementById("rejouer");
 
 let valeurChiffre;
 let NbEssai = 0;
@@ -49,6 +50,8 @@ niveauMoyen.addEventListener("click", function () {
   alert("niveau facile 7 chances chiffre entre 1 et 50");
   nombreNiveau.textContent= (" entre 1 et  50");
   chance.textContent= (" vous avez 7 chances");
+
+
  NbEssai = 0;
  Valeur = 7;
  min = 0;
@@ -79,7 +82,6 @@ chiffreAletoire( min , max);
 /************************************************************************** */
 function chiffreAletoire(mini , max) {
   alea = Math.round(Math.random() * (max - mini) + mini);
-  console.log(alea);
   return alea;
 }
 
@@ -87,7 +89,7 @@ function chiffreAletoire(mini , max) {
   function compareNb(nbInput, alea, Valeur) {
  if (nbInput != "") {
 
-  // if (Valeur > NbEssai) {
+  
 
   if (nbInput > alea && Valeur > NbEssai)  {
     Resultat.style.color = "rgb(0,255,26)";
@@ -106,10 +108,10 @@ function chiffreAletoire(mini , max) {
     Resultat.style.color = "rgb(0,255,26)";
     Valider.style.display = "none";
     Resultat.textContent = `Gagner!!! Vous avez trouvé le chiffre en ${NbEssai } tentatives.`;
-    console.log("gagné");
+    
     
    }
-  // }
+
   else{
     Resultat.style.color = "rgb(0,255,26)";
     Essai.textContent = `fin de la partie le chiffre était: ${alea}`;
@@ -119,7 +121,9 @@ function chiffreAletoire(mini , max) {
 }
 
 else{
-  console.log("rentre un chiffre");
+  Essai.style.color ="red";
+  Essai.style.fontSize = "20px"
+  Essai.textContent =" veuillez rentrer un chiffre ";
   NbEssai --;
 }
 }
@@ -137,14 +141,12 @@ input.addEventListener("input", function (e) {
 Valider.addEventListener("click", function () {
  NbEssai++;
   compareNb(valeurChiffre, alea, Valeur);
-  
-  console.log(alea);
-    
- console.log("valeur: "+ Valeur);
-
-  
-  console.log("Nombre d'essai " + NbEssai);
 
   reponse.style.color = "white";
   reponse.textContent = valeurChiffre;
+});
+/***************************************************************************/
+Rejouer.addEventListener("click", function () {
+ location.reload();
+
 });

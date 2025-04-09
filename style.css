@@ -7,7 +7,7 @@
 section {
   margin-left: auto;
   margin-right: auto;
-  //background-image: url(./photo.jpg);
+  background-color: rgb(98, 105, 110);
   width: 1200px;
   border-radius: 15px;
 }
@@ -50,9 +50,9 @@ h1 {
 
 #boite {
   display: flex;
-  margin: 100px 60px;
+  margin: 60px 60px;
   border: solid 1px;
-  border-radius: 10px;
+  border-radius: 40px 120px 40px 120px;
   background: linear-gradient(
     35deg,
     rgb(255, 0, 0) 0%,
@@ -84,7 +84,13 @@ h1 {
   background-color: blue;
   margin: 50px 0;
 }
-
+.R p{
+  margin: 2px 0;
+  text-align: center;
+ }
+ #Essai{
+  font-weight: bold;
+ }
 #Reponse{
  
    font-size: 30px;
@@ -103,11 +109,12 @@ h1 {
 
 #info {
   display: flex;
-  background-color:green ;
+  background-color:rgb(0, 98, 128) ;
   border: solid 1px ;
   position: absolute;
-  height: 70%;
-  width: 150%;
+  margin-top: -40px;
+  height: 100%;
+  width: 100%;
   
 }
 
@@ -119,23 +126,43 @@ h1 {
 }
 
 #input {
-  width: 70px;
-  height: 30px;
+  width: 80px;
+  height: 35px;
   text-align: center;
+  margin-top: 20px;
   margin-bottom: 5px;
 }
 .valider {
-  width: 50px;
-  height: 25px;
+  margin-top: 10px;
+  width: 60px;
+  height: 30px;
   cursor: grab;
 }
 
+#rejouer{
+  width: 80px;
+  height: 30px;
+  border: none;
+  background-color: black;
+  color:aqua;
+  margin-top: -20px;
+  cursor: pointer;
+  border-radius: 20px;
+}
 
 @media screen and  ( max-width: 800px) {
   
   #container{
-    margin: 10px;
-    width: 100vh;
+  margin: auto;
+    width: 100%;
+  }
+  
+  .box {
+    border-radius: 15px 120px 15px 15px;
+  }
+  .box h3{
+    display: flex;
+ padding-right: 40px ;
   }
 }
 
@@ -143,9 +170,13 @@ h1 {
 @media screen and  ( max-width: 600px) {
   
   #container{
-    margin-left: auto;
-    margin-right: auto;
+  margin: auto;
     width: 100%;
-   
+    
+  }
+
+  .box {
+    border-radius: 15px 120px 15px 15px;
+  
   }
 }
