@@ -112,7 +112,7 @@ h1 {
   background-color:rgb(0, 98, 128,0.90) ;
   border: solid 1px ;
   position: absolute;
-  height:50%;
+  height: 80vh;
   width: 100%;
   
 }
@@ -122,6 +122,7 @@ h1 {
   text-align: center;
   margin: auto auto;
   font-size: 40px;
+  
 }
 
 #input {
@@ -191,10 +192,8 @@ h1 {
 @media screen and  ( max-width: 400px) {
   
   #container{
-  margin: auto;
+    margin: auto;
     width: 100%;
-    height: 100vh;
-    
   }
 
   .box {
