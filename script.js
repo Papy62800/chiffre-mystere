@@ -12,11 +12,13 @@ const chance = document.getElementById("chance");
 const info= document.getElementById("info");
 const Rejouer = document.getElementById("rejouer");
 
+
 let valeurChiffre;
 let NbEssai = 0;
 let Valeur = 0;
 let min = 0 ;
 let max = 0;
+
 
 /***************************************************************************** */
 
@@ -29,7 +31,7 @@ niveauFacile.addEventListener("click", function () {
   Valider.style.display = "block";
   Resultat.textContent ="";
   Essai.textContent = "";
-  alert("niveau facile 3 chances chiffre entre 1 et 10");
+ // alert("niveau facile 3 chances chiffre entre 1 et 10");
 nombreNiveau.textContent= (" entre 1 et  10");
 chance.textContent= (" vous avez 3 chances");
  NbEssai = 0;
@@ -47,7 +49,7 @@ niveauMoyen.addEventListener("click", function () {
   Valider.style.display = "block";
   Resultat.textContent ="";
   Essai.textContent = "";
-  alert("niveau facile 7 chances chiffre entre 1 et 50");
+ // alert("niveau facile 7 chances chiffre entre 1 et 50");
   nombreNiveau.textContent= (" entre 1 et  50");
   chance.textContent= (" vous avez 7 chances");
 
@@ -67,7 +69,7 @@ niveauDifficile.addEventListener("click", function () {
   Valider.style.display = "block";
    Resultat.textContent ="";
   Essai.textContent = "";
-  alert("niveau facile 10 chances chiffre entre 1 et 100");
+ // alert("niveau facile 10 chances chiffre entre 1 et 100");
   nombreNiveau.textContent= (" entre 1 et 100");
   chance.textContent= (" vous avez 10 chances");
  NbEssai = 0;
@@ -86,10 +88,9 @@ function chiffreAletoire(mini , max) {
 }
 
 /**************************************************************************** */
-  function compareNb(nbInput, alea, Valeur) {
- if (nbInput != "") {
+  function compareNb(nbInput, alea, Valeur) {  
 
-  
+  if (nbInput != "") {
 
   if (nbInput > alea && Valeur > NbEssai)  {
     Resultat.style.color = "rgb(0,255,26)";
@@ -108,6 +109,7 @@ function chiffreAletoire(mini , max) {
     Resultat.style.color = "rgb(0,255,26)";
     Valider.style.display = "none";
     Resultat.textContent = `Gagner!!! Vous avez trouvé le chiffre en ${NbEssai } tentatives.`;
+    alert("vous avez Gagné!! ")
     
     
    }
@@ -120,6 +122,7 @@ function chiffreAletoire(mini , max) {
   }
 }
 
+
 else{
   Essai.style.color ="red";
   Essai.style.fontSize = "20px"
@@ -127,7 +130,7 @@ else{
   NbEssai --;
 }
 }
-
+  
 
 /**************************************************************************** */
    
@@ -150,3 +153,4 @@ Rejouer.addEventListener("click", function () {
  location.reload();
 
 });
+
